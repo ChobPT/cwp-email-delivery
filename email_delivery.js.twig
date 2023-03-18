@@ -1,0 +1,5 @@
+let php_conf = JSON.parse('{{mod.confs_php|json_encode|raw}}');
+let initial_conf = JSON.parse('{{mod.tab|json_encode|raw}}');
+let domain_list = JSON.parse('{{mod.domains|json_encode|raw}}');
+
+console.log(domain_list);
