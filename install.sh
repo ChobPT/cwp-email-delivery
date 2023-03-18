@@ -26,6 +26,7 @@ if [ "$action" == "copy" ]; then
   cp email_delivery.js.twig "/usr/local/cwpsrv/var/services/users/cwp_theme/$theme/js/modules/"
   cp mod_email_delivery.html "/usr/local/cwpsrv/var/services/users/cwp_theme/$theme/"
   cp email_delivery.php /usr/local/cwpsrv/var/services/user_files/modules/
+  cp email_delivery.ini /usr/local/cwpsrv/var/services/users/cwp_lang/en/
 
   # Add lines to menu files
   sed -i '/{% if ("mail_routing" in rmenu ) or (swmenu==1) %}/i\{% if ("email_delivery" in rmenu ) or (swmenu==1) %}        <li class="search"><a href="?module=email_delivery">E-mail Delivery</a></li>{% endif %}' "/usr/local/cwpsrv/var/services/users/cwp_theme/$theme/menu_locked.html"
@@ -35,6 +36,7 @@ else
   rm "/usr/local/cwpsrv/var/services/users/cwp_theme/$theme/js/modules/email_delivery.js.twig"
   rm "/usr/local/cwpsrv/var/services/users/cwp_theme/$theme/mod_email_delivery.html"
   rm /usr/local/cwpsrv/var/services/user_files/modules/email_delivery.php
+  rm /usr/local/cwpsrv/var/services/users/cwp_lang/en/email_delivery.ini
 
   # Remove lines from menu files
   sed -i '/{% if ("email_delivery" in rmenu ) or (swmenu==1) %}/d' "/usr/local/cwpsrv/var/services/users/cwp_theme/$theme/menu_locked.html"
