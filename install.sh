@@ -5,7 +5,7 @@ theme="original"
 
 # Default action is to copy files
 action="copy"
-
+chmod 644 /var/log/maillog
 # Parse command-line options
 while getopts "t:-:u" opt; do
   case "$opt" in
